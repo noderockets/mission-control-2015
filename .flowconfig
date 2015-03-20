@@ -1,0 +1,12 @@
+[ignore]
+.*/webpack/node_modules/
+.*/webpack-dev-server/node_modules/
+
+[include]
+./client
+./server
+
+[libs]
+./types
+
+[options]

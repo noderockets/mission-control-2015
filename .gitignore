@@ -1,0 +1,8 @@
+node_modules
+rethinkdb_data
+npm-debug.log
+.DS_Store
+client/bower_components
+client/build
+.idea
+*.swp
