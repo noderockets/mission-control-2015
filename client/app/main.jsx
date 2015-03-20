@@ -18,11 +18,8 @@ module.exports = React.createClass({
       return
     }
 
-    console.log(pad.axes[3])
-    var rotationangle = pad.axes[3]
-    cubeData.quaternion.setFromEuler(new THREE.Euler(rotationangle, rotationangle * 3, 0))
+    cubeData.quaternion.setFromEuler(new THREE.Euler(pad.axes[3], pad.axes[2], 0))
     this.setState({sceneprops})
-
     requestAnimationFrame(this.pollGamepad)
   },
 
@@ -44,7 +41,6 @@ module.exports = React.createClass({
   },
 
   render():ReactElement {
-    console.log('rendering')
     var {sceneprops} = this.state
     return <ExampleStage {...sceneprops}/>
   }
