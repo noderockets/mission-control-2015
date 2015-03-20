@@ -1,14 +1,6 @@
-# Precept Upon Precept
+# Node Rockets - Mission Control
 
-...line upon line, here a little there a little
-
-A game by 2
-
-## Inspiration
-
-https://www.youtube.com/watch?v=avwDj3KRuLc
-
-It's an awesome video. Definitely go watch it. He mentions creating a game by doing a piece, then passing it off to a friend, then repeating.
+This will be the UI that controls the launcher. You can use a gamepad. It will also be able to simulate past launches with WebGL.
 
 ## Prereqs
 
