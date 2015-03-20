@@ -9,6 +9,23 @@ module.exports = React.createClass({
 
   displayName: 'Main',
 
+  pollGamepad() {
+    var {sceneprops} = this.state
+    var {cubeData} = sceneprops
+
+    var pad = navigator.getGamepads()[0]
+    if (!pad) {
+      return
+    }
+
+    console.log(pad.axes[3])
+    var rotationangle = pad.axes[3]
+    cubeData.quaternion.setFromEuler(new THREE.Euler(rotationangle, rotationangle * 3, 0))
+    this.setState({sceneprops})
+
+    requestAnimationFrame(this.pollGamepad)
+  },
+
   getInitialState() {
     return {
       sceneprops: {
@@ -23,23 +40,11 @@ module.exports = React.createClass({
   },
 
   componentDidMount() {
-    var {sceneprops} = this.state
-    var {cubeData} = sceneprops
-    var rotationangle = 0
-
-    var spinCube = t => {
-      rotationangle = t * 0.001
-      cubeData.quaternion.setFromEuler(new THREE.Euler(rotationangle, rotationangle * 3, 0))
-
-      this.setState({sceneprops})
-
-      requestAnimationFrame(spinCube)
-    }
-
-    spinCube(0)
+    this.pollGamepad()
   },
 
   render():ReactElement {
+    console.log('rendering')
     var {sceneprops} = this.state
     return <ExampleStage {...sceneprops}/>
   }

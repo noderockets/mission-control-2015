@@ -4,12 +4,16 @@ require('babel/polyfill')
 
 var React = require('react')
 
-// var Main = require('./main')
+var Main = require('./main')
 
 function render() {
-  // React.render(<Main/>, document.body)
-  React.render(<Thing/>, document.body)
+  React.render(<Main/>, document.getElementById('three'))
+  // React.render(<Thing/>, document.getElementById('gamepad'))
 }
+
+
+
+
 
 var Thing = React.createClass({
 
@@ -20,6 +24,7 @@ var Thing = React.createClass({
   componentDidMount() {
     var available = !!navigator.webkitGetGamepads || !!navigator.webkitGamepads || !!navigator.getGamepads
 
+    console.log(available)
     this.setState({
       available
     })
@@ -30,6 +35,7 @@ var Thing = React.createClass({
   },
 
   pollGamepad() {
+    console.log('polling')
     this.setState({
       gamepad: navigator.getGamepads()[0] || 'AH WHERE IS IT'
     })
