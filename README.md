@@ -13,6 +13,7 @@ This will be the UI that controls the launcher. You can use a gamepad. It will a
 
 ## Hack on it
 
+- `npm run mock_launcher`
 - `npm start`
 
 ## Notes

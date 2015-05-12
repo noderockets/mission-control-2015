@@ -26,8 +26,8 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx$/, loader: 'react-hot!babel', exclude: [/node_modules/] },
-      { test: /\.js$/, loader: 'babel', exclude: [/node_modules/] },
+      // { test: /\.jsx$/, loader: 'react-hot!babel', exclude: [/node_modules/] },
+      { test: /\.jsx?$/, loader: 'babel', exclude: [/node_modules/] },
       { test: /\.styl$/, loader: 'style!css!postcss!stylus' }
     ]
   },
@@ -39,7 +39,7 @@ module.exports = {
   ],
 
   externals: {
-    APIHOST: '"localhost:3004"'
+    APIHOST: '"http://localhost:3004"'
   },
 
   devtool: '#eval'

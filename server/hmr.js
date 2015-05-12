@@ -11,7 +11,8 @@ var config = require('../webpack.config')
 new WebpackDevServer(webpack(config), {
   contentBase: 'client/',
   publicPath: '/build/',
-  hot: true
+  hot: true,
+  quiet: true
 }).listen(3000, '0.0.0.0', function (err) {
   if (err) {
     console.log(err)

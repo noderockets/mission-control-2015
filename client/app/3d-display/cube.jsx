@@ -5,7 +5,7 @@ var THREE = require('three')
 var {Mesh, Object3D} = require('react-three')
 
 var centered = new THREE.Vector3(0, 0, 0)
-var boxGeometry = new THREE.BoxGeometry(200, 200, 200)
+var boxGeometry = new THREE.BoxGeometry(400, 400, 400)
 var material = new THREE.MeshNormalMaterial()
 
 module.exports = React.createClass({

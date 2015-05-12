@@ -5,14 +5,25 @@
     <meta charset="utf-8">
     <title>Node Rockets</title>
     <link rel="stylesheet" href="css/foundation/normalize.css">
+    <link rel="stylesheet" href="css/c3.min.css">
     <link rel="stylesheet" href="css/foundation/foundation.css">
     <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="css/fonts/opensans_regular/stylesheet.css">
     <link rel="stylesheet" href="css/fonts/opensans_light/stylesheet.css">
   </head>
-  <body>
-    <div id="gamepad"></div>
-    <div id="three"></div>
+  <body style="background-color: #ddd">
+
+    <div style="display:flex">
+      <div style="flex:1">
+        <div id="graph"></div>
+      </div>
+      <div id="three" style="flex:2"></div>
+      <div style="flex:1">what goes here?</div>
+    </div>
+
+    <div id="dashboard"></div>
+
+    <script src="http://localhost:3004/socket.io/socket.io.js"></script>
     <script src="build/bundle.js"></script>
   </body>
 </html>
