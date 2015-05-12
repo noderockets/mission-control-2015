@@ -1,5 +1,8 @@
 {
-  "parser": "esprima-fb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
   "ecmaFeatures": {
     "arrowFunctions": true,
     "binaryLiterals": true,
