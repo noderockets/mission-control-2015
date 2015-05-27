@@ -11,17 +11,25 @@
     <link rel="stylesheet" href="css/fonts/opensans_regular/stylesheet.css">
     <link rel="stylesheet" href="css/fonts/opensans_light/stylesheet.css">
   </head>
-  <body style="background-color: #ddd">
+  <body style="background-color: rgb(104,104,104)">
 
-    <div style="display:flex">
-      <div style="flex:1">
-        <div id="graph"></div>
+    <div>
+      <div style="display:flex; flex-direction:row; justify-content: space-around">
+        <div style="flex:1; text-align:center;">
+          <img style="width: 200px;" src="/img/logo.png">
+        </div>
+        <div style="flex:1; flex-grow: 2; text-align:center;" id="three"></div>
+        <div style="flex:1; text-align:center;">
+          <h2 style="color: white;">MISSION</h2>
+          <h2 style="color: white;">CONTROL</h2>
+        </div>
       </div>
-      <div id="three" style="flex:2"></div>
-      <div style="flex:1">what goes here?</div>
+      <div style="width: 100%">
+        <div id="graph"></div>
+        <div id="dashboard"></div>
+      </div>
     </div>
 
-    <div id="dashboard"></div>
 
     <script src="http://localhost:3004/socket.io/socket.io.js"></script>
     <script src="build/bundle.js"></script>

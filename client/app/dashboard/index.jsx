@@ -41,17 +41,16 @@ module.exports = React.createClass({
 
   render(): ReactElement {
     return (
-      <div style={{display: 'flex'}}>
-        <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-          <button onClick={this.openFill}>Open Fill Valve</button>
-          <button onClick={this.openLaunch}>Open Launch Valve</button>
-          <button onClick={this.closeFill}>Close Fill Valve</button>
-          <button onClick={this.closeLaunch}>Close Launch Valve</button>
-          <button disabled>Deploy Parachute</button>
+      <div>
+        <div>
+          <Filler width={'100%'} height={40} fillLevel={this.state.level}/>
         </div>
-        <div style={{flex: 5}}>
-          <Filler width={40} height={500} fillLevel={this.state.level}/>
-          <div>{this.state.level}%</div>
+        <div style={{textAlign: 'center'}}>
+          <button style={{backgroundColor: 'rgb(94,182,45)', marginRight: '8px'}} onClick={this.openFill}>Open Fill Valve</button>
+          <button style={{backgroundColor: 'rgb(94,182,45)', marginRight: '8px'}} onClick={this.openLaunch}>Open Launch Valve</button>
+          <button style={{backgroundColor: 'rgb(94,182,45)', marginRight: '8px'}} onClick={this.closeFill}>Close Fill Valve</button>
+          <button style={{backgroundColor: 'rgb(94,182,45)', marginRight: '8px'}} onClick={this.closeLaunch}>Close Launch Valve</button>
+          <button style={{backgroundColor: 'rgb(94,182,45)', marginRight: '8px'}} disabled>Deploy Parachute</button>
         </div>
       </div>
     )
@@ -66,7 +65,7 @@ var Filler = React.createClass({
   render(): ReactElement {
     var {fillLevel, width, height} = this.props
 
-    var _height = fillLevel + '%'
+    var _width = fillLevel + '%'
     var r = Math.floor(fillLevel / 100 * 255)
     var g = Math.floor((100 - fillLevel) / 100 * 255)
     var backgroundColor = `rgb(${r}, ${g}, 0)`
@@ -74,7 +73,7 @@ var Filler = React.createClass({
     return (
       <div style={{width, height}}>
         <div style={{position: 'relative', border: '2px solid #ccc', height: '100%', width: '100%'}}>
-          <div style={{position: 'absolute', bottom: 0, backgroundColor, height: _height, width: '100%'}}></div>
+          <div style={{position: 'absolute', bottom: 0, backgroundColor, width: _width, height: '100%'}}><span style={{marginLeft: '10px'}}>{_width}</span></div>
         </div>
       </div>
     )
